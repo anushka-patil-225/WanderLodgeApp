@@ -2,7 +2,6 @@ import { Link, Navigate } from "react-router-dom";
 import { useState, useContext } from "react";
 import { UserContext } from "../UserContext";
 import axios from "axios";
-import { BASE_URL } from "../config.js";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
