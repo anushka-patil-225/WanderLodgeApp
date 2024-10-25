@@ -25,6 +25,8 @@ app.use(
   cors({
     credentials: true,
     origin: "https://wander-lodge-app-z66c.vercel.app",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
