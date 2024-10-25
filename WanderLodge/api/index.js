@@ -24,7 +24,7 @@ app.use("/uploads", express.static(__dirname + "/uploads"));
 app.use(
   cors({
     credentials: true,
-    origin: "https://wander-lodge-app-z66c.vercel.app/",
+    origin: "https://wander-lodge-app-z66c.vercel.app",
   })
 );
 
