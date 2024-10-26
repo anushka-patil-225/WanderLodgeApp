@@ -230,7 +230,7 @@ app.get("/places", async (req, res) => {
   res.json(await Place.find());
 });
 
-app.post("/bookings", cors(), async (req, res) => {
+app.post("/api/bookings", cors(), async (req, res) => {
   const userData = await getUserDataFromReq(req);
   const { place, checkIn, checkOut, numberOfGuests, name, phone, price } =
     req.body;
