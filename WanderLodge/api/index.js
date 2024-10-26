@@ -25,23 +25,8 @@ app.use(
   cors({
     credentials: true,
     origin: "https://wander-lodge-app.vercel.app",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: [
-      "Content-Type",
-      "Authorization",
-      "Access-Control-Allow-Origin",
-    ],
-    exposedHeaders: ["Access-Control-Allow-Origin", "Authorization"],
   })
 );
-
-// app.use(
-//   cors({
-//     credentials: true,
-//   })
-// );
-
-app.options("*", cors());
 
 mongoose
   .connect(process.env.MONGO_URL, {
@@ -243,12 +228,7 @@ app.get("/places", async (req, res) => {
   res.json(await Place.find());
 });
 
-app.post("/api/bookings", cors(), async (req, res) => {
-  res.setHeader(
-    "Access-Control-Allow-Origin",
-    "https://wander-lodge-app.vercel.app"
-  );
-  res.setHeader("Access-Control-Allow-Credentials", "true");
+app.post("/bookings", async (req, res) => {
   const userData = await getUserDataFromReq(req);
   const { place, checkIn, checkOut, numberOfGuests, name, phone, price } =
     req.body;
