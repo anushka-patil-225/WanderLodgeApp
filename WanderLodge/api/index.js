@@ -30,7 +30,11 @@ app.use("/uploads", express.static(__dirname + "/uploads"));
 //   })
 // );
 
-app.use(cors());
+app.use(
+  cors({
+    credentials: true,
+  })
+);
 
 mongoose
   .connect(process.env.MONGO_URL, {
