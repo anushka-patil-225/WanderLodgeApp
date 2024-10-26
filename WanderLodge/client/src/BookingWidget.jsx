@@ -28,18 +28,15 @@ export default function ({ place }) {
   }
 
   async function bookThisPlace() {
-    const response = await axios.post(
-      "https://wanderlodgeapp.onrender.com/bookings",
-      {
-        checkIn,
-        checkOut,
-        numberOfGuests,
-        name,
-        phone,
-        place: place._id,
-        price: numberOfNights * place.price,
-      }
-    );
+    const response = await axios.post("/api/bookings", {
+      checkIn,
+      checkOut,
+      numberOfGuests,
+      name,
+      phone,
+      place: place._id,
+      price: numberOfNights * place.price,
+    });
     const bookingId = response.data._id;
     setRedirect(`/account/bookings/${bookingId}`);
   }
