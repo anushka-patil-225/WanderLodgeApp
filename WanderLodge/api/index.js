@@ -26,7 +26,12 @@ app.use(
     credentials: true,
     origin: ["https://wander-lodge-app.vercel.app"],
     methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
+    allowedHeaders: [
+      "Content-Type",
+      "Authorization",
+      "Access-Control-Allow-Origin",
+    ],
+    exposedHeaders: ["Access-Control-Allow-Origin", "Authorization"],
   })
 );
 
