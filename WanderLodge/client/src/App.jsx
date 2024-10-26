@@ -13,7 +13,7 @@ import PlacesPage from "./Pages/PlacesPage";
 import BookingsPage from "./Pages/BookingsPage";
 import BookingPage from "./Pages/BookingPage";
 
-axios.defaults.baseURL = "http://localhost:4000";
+axios.defaults.baseURL = "https://wanderlodgeapp-1.onrender.com";
 axios.defaults.withCredentials = true;
 
 function App() {
