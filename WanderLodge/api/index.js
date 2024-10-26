@@ -21,20 +21,20 @@ const jwtSecret = "kjdfghslejgklfnbks";
 app.use(express.json());
 app.use(cookieParser());
 app.use("/uploads", express.static(__dirname + "/uploads"));
-// app.use(
-//   cors({
-//     credentials: true,
-//     origin: ["https://wander-lodge-app.vercel.app"],
-//     methods: ["GET", "POST", "PUT", "DELETE"],
-//     allowedHeaders: ["Content-Type", "Authorization"],
-//   })
-// );
-
 app.use(
   cors({
     credentials: true,
+    origin: ["https://wander-lodge-app.vercel.app"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+
+// app.use(
+//   cors({
+//     credentials: true,
+//   })
+// );
 
 mongoose
   .connect(process.env.MONGO_URL, {
