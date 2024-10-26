@@ -237,6 +237,11 @@ app.get("/places", async (req, res) => {
 });
 
 app.post("/api/bookings", cors(), async (req, res) => {
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://wander-lodge-app.vercel.app"
+  );
+  res.setHeader("Access-Control-Allow-Credentials", "true");
   const userData = await getUserDataFromReq(req);
   const { place, checkIn, checkOut, numberOfGuests, name, phone, price } =
     req.body;
